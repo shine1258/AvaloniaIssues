@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="AvaloniaIssues.Views.GhostItemView"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vs="using:AvaloniaIssues.Views"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:DataType="vs:GhostItemView"
+    DataContext="{Binding $self}"
+    mc:Ignorable="d">
+    <UniformGrid Columns="2">
+        <ListBox ItemsSource="{Binding Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="vs:GhostItemView+Item">
+                    <StackPanel Spacing="12">
+                        <TextBlock FontSize="36" Text="{Binding Index}" />
+                        <TextBlock
+                            FontSize="24"
+                            IsVisible="{Binding ShowMore}"
+                            Text="More" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox ItemsSource="{Binding Items}">
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="vs:GhostItemView+Item">
+                    <StackPanel Spacing="12">
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="36"
+                            Text="{Binding Index}" />
+
+                        <Image IsVisible="{Binding ShowMore}" Source="avares://AvaloniaIssues/Assets/delicate-arch-896885_640.jpg" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </UniformGrid>
+</UserControl>
