@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -16,4 +17,14 @@ public class App : Application
 
         base.OnFrameworkInitializationCompleted();
     }
+
+    private void Active() =>
+        (ApplicationLifetime as IClassicDesktopStyleApplicationLifetime)!.MainWindow!.Activate();
+
+    private void TrayIcon_Clicked(object? sender, EventArgs e) => Active();
+
+    private void NativeMenuItem_Click(object? sender, EventArgs e) => Active();
+
+    private void NativeMenuItem2_Click(object? sender, EventArgs e) =>
+        Dispatcher.InvokeAsync(Active);
 }

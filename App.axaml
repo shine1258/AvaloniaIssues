@@ -7,4 +7,17 @@
   <Application.Styles>
     <FluentTheme />
   </Application.Styles>
+
+  <TrayIcon.Icons>
+    <TrayIcons>
+      <TrayIcon Clicked="TrayIcon_Clicked" Icon="/Assets/avalonia-logo.ico">
+        <TrayIcon.Menu>
+          <NativeMenu>
+            <NativeMenuItem Click="NativeMenuItem_Click" Header="NativeMenuItem" />
+            <NativeMenuItem Click="NativeMenuItem2_Click" Header="NativeMenuItem2" />
+          </NativeMenu>
+        </TrayIcon.Menu>
+      </TrayIcon>
+    </TrayIcons>
+  </TrayIcon.Icons>
 </Application>
