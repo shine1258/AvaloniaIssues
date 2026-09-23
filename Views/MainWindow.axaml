@@ -12,7 +12,7 @@
   mc:Ignorable="d"
 >
   <TabControl>
-    <TabItem Header="Ghost Item">
+    <TabItem Header="Ghost Item (Fixed)">
       <vs:GhostItemView />
     </TabItem>
   </TabControl>
